@@ -1,10 +1,13 @@
 <?php
-use App\Http\Controllers\PostController;
-use Illuminate\Foundation\Inspiring;
 
+use App\Http\Controllers\Api\V1\PostController as V1Controller;
+use App\Http\Controllers\Api\V2\PostController as V2Controller;
+use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return Inspiring::quote();
+Route::prefix('v1')->group(function () {
+    Route::apiResource('/post', V1Controller::class);
 });
-// Route::get('/post',[PostController::class,'index'   ]->name('post.index') );
-// Route::get('/post', [PostController::class, 'index'])->name('post.index');
+
+Route::prefix('v2')->group(function () {
+    Route::apiResource('/post', V2Controller::class);
+});

@@ -1,0 +1,66 @@
+<?php
+
+namespace App\Http\Controllers\Api\V2;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+
+class PostController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        //
+        return response()->json([
+            'message' => 'API V2 Post Controller'
+        ]);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        //
+        return response()->json(['message'=> 'This Store v2']);
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        //
+        return response()->json([
+            'message' => 'API V2 Post Controller',
+            'id' => $id
+        ]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
+        //
+        return response()->json([
+            'message' => 'API V2 Post Controller',
+            'id' => $id,
+            'data' => $request->all()
+        ]);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        //
+        return response()->json([
+            'message' => 'API V2 Post Controller',
+            'id' => $id
+        ]);
+    }
+}
